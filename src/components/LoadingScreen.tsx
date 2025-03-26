@@ -17,9 +17,11 @@ function LoadingModel() {
     <mesh ref={meshRef}>
       <torusKnotGeometry args={[1, 0.3, 128, 16]} />
       <meshStandardMaterial
-        color={new THREE.Color("#ff6b00")}
-        metalness={0.5}
+        color={new THREE.Color("#4f46e5")}
+        metalness={0.7}
         roughness={0.2}
+        emissive={new THREE.Color("#818cf8")}
+        emissiveIntensity={0.5}
       />
     </mesh>
   );
@@ -31,10 +33,15 @@ export default function LoadingScreen() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center"
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex flex-col items-center justify-center"
     >
-      <div className="w-full h-[60vh]">
-        <Canvas camera={{ position: [0, 0, 5] }}>
+      <div className="w-full h-[60vh] relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 blur-3xl"></div>
+        <Canvas
+          camera={{ position: [0, 0, 5] }}
+          gl={{ antialias: true, alpha: true }}
+        >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
           <spotLight
@@ -53,14 +60,56 @@ export default function LoadingScreen() {
           />
         </Canvas>
       </div>
-      <div className="text-white text-center">
-        <h2 className="text-4xl font-bold mb-4">dbughouse</h2>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="text-white text-center relative z-10"
+      >
+        <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+          dbughouse
+        </h2>
         <div className="flex items-center justify-center space-x-2">
-          <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-          <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-          <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{ 
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-3 h-3 bg-indigo-500 rounded-full"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{ 
+              duration: 1.5,
+              delay: 0.2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-3 h-3 bg-purple-500 rounded-full"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{ 
+              duration: 1.5,
+              delay: 0.4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-3 h-3 bg-pink-500 rounded-full"
+          />
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

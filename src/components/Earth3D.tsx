@@ -13,7 +13,7 @@ export default function Earth3D() {
 
   useFrame((state) => {
     if (earthRef.current) {
-      earthRef.current.rotation.y += 0.002;
+      earthRef.current.rotation.y += 0.0005; // Even slower rotation
     }
   });
 
@@ -27,6 +27,8 @@ export default function Earth3D() {
           normalMap={textures.normalMap}
           normalScale={new THREE.Vector2(0.85, 0.85)}
           shininess={5}
+          transparent
+          opacity={0.8} // Slightly more transparent
         />
       </mesh>
       
@@ -35,8 +37,8 @@ export default function Earth3D() {
         <sphereGeometry args={[2, 64, 64]} />
         <meshPhongMaterial
           transparent={true}
-          opacity={0.2}
-          color={new THREE.Color("#1e90ff")}
+          opacity={0.15} // Subtler glow
+          color={new THREE.Color("#ff8c42")} // Orange glow matching theme
           blending={THREE.AdditiveBlending}
           side={THREE.BackSide}
         />

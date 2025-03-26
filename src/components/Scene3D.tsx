@@ -5,15 +5,18 @@ import Earth3D from './Earth3D';
 
 export default function Scene3D() {
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10">
+    <div className="fixed inset-0 z-0">
+      {/* Gradient overlay for better contrast with content */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/80"></div>
+      
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-        <ambientLight intensity={0.3} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} />
+        <ambientLight intensity={0.2} />
+        <pointLight position={[10, 10, 10]} intensity={1} />
         <Stars 
           radius={300} 
           depth={60} 
-          count={20000} 
-          factor={7} 
+          count={5000} 
+          factor={4} 
           saturation={0} 
           fade={true} 
         />
@@ -24,7 +27,7 @@ export default function Scene3D() {
           minPolarAngle={Math.PI / 2.5}
           maxPolarAngle={Math.PI / 1.5}
           autoRotate
-          autoRotateSpeed={0.5}
+          autoRotateSpeed={0.3} // Slower rotation
         />
       </Canvas>
     </div>

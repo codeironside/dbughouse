@@ -1,188 +1,111 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, ShieldCheck, Code2, LockKeyhole, Network, Binary, TerminalSquare, Fingerprint } from 'lucide-react';
+import { Users, Target, Shield, Award } from 'lucide-react';
 
 export default function About() {
   const values = [
     {
-      icon: <Cpu className="w-10 h-10" />,
+      icon: <Award className="w-12 h-12 text-orange-500" />,
       title: "Excellence",
-      description: "Cutting-edge solutions that redefine industry standards",
-      bg: "bg-gradient-to-br from-cyan-500 to-blue-600"
+      description: "Delivering high-quality, industry-leading  Courses."
     },
     {
-      icon: <ShieldCheck className="w-10 h-10" />,
+      icon: <Shield className="w-12 h-12 text-orange-500" />,
       title: "Integrity",
-      description: "Ethical operations with complete transparency",
-      bg: "bg-gradient-to-br from-purple-500 to-indigo-600"
+      description: "Acting ethically and transparently in all interactions."
     },
     {
-      icon: <Network className="w-10 h-10" />,
+      icon: <Target className="w-12 h-12 text-orange-500" />,
       title: "Reliability",
-      description: "99.99% uptime with failproof architectures",
-      bg: "bg-gradient-to-br from-emerald-500 to-teal-600"
+      description: "Ensuring consistently dependable services."
     },
     {
-      icon: <LockKeyhole className="w-10 h-10" />,
+      icon: <Users className="w-12 h-12 text-orange-500" />,
       title: "Security",
-      description: "Military-grade protection for your digital assets",
-      bg: "bg-gradient-to-br from-rose-500 to-pink-600"
-    }
-  ];
-
-  const features = [
-    {
-      icon: <Binary className="w-8 h-8" />,
-      title: "Custom Solutions",
-      description: "Bespoke systems engineered for your exact threat profile"
-    },
-    {
-      icon: <TerminalSquare className="w-8 h-8" />,
-      title: "Scalable Architecture",
-      description: "Modular designs that grow with your security needs"
-    },
-    {
-      icon: <Fingerprint className="w-8 h-8" />,
-      title: "Zero-Trust Compliance",
-      description: "End-to-end verification at every access point"
-    },
-    {
-      icon: <Code2 className="w-8 h-8" />,
-      title: "Proven Frameworks",
-      description: "Battle-tested security patterns and protocols"
+      description: "Prioritizing the safety and privacy of our clients through robust systems."
     }
   ];
 
   return (
-    <main className="flex-grow">
-      {/* Cyber Grid Background - Maintained as requested */}
-      <div className="fixed inset-0 -z-10 overflow-hidden opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-transparent via-transparent to-gray-900"></div>
-      </div>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        {/* Hero Section with Enhanced Cyber Elements */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-2xl bg-gray-900/90 border border-gray-700 backdrop-blur-sm mb-16 shadow-2xl"
-        >
-          {/* Animated connection nodes */}
-          <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-            {[...Array(6)].map((_, i) => (
-              <div 
-                key={i}
-                className="absolute w-2 h-2 bg-cyan-400 rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  boxShadow: '0 0 10px 2px rgba(34, 211, 238, 0.7)'
-                }}
-              />
-            ))}
-          </div>
-
-          <div className="relative px-8 py-12 sm:p-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">dbughouse</span> Cyber Systems
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mb-10">
-              We architect the digital immune systems for tomorrow's enterprises. Our quantum-resistant frameworks and adaptive security matrices redefine cyber resilience.
+    <main className="flex-grow container mx-auto px-6 py-24">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white/80 backdrop-blur-md rounded-lg shadow-lg p-8 mb-12"
+      >
+        <h1 className="text-5xl font-bold text-black mb-8">About dbughouse</h1>
+        <p className="text-xl text-gray-700 mb-8">
+          dbughouse is a forward-thinking IT and Security company dedicated to addressing technology gaps across industries. By offering innovative, secure, and tailored  Courses, we aim to exceed client expectations and transform how businesses and individuals interact with technology.
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="bg-orange-50 p-8 rounded-lg">
+            <h2 className="text-3xl font-bold text-black mb-4">Our Vision</h2>
+            <p className="text-gray-700">
+              To effectively mitigate technology risks for users, ensuring reliable, resilient, and efficient systems that empower modern businesses and homes.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-8 hover:border-cyan-500/40 transition-all duration-300">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="text-cyan-400">01</span> Our Vision
-                </h2>
-                <p className="text-gray-300">
-                  To create self-healing digital ecosystems where security evolves faster than threats through continuous adversarial learning.
-                </p>
-              </div>
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-purple-500/20 rounded-xl p-8 hover:border-purple-500/40 transition-all duration-300">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="text-purple-400">02</span> Our Mission
-                </h2>
-                <p className="text-gray-300">
-                  To deploy autonomous defense grids that predict, prevent, and neutralize cyber threats before they manifest.
-                </p>
-              </div>
-            </div>
           </div>
-        </motion.section>
+          
+          <div className="bg-orange-50 p-8 rounded-lg">
+            <h2 className="text-3xl font-bold text-black mb-4">Our Mission</h2>
+            <p className="text-gray-700">
+              To reintroduce reliable, secure, and resource-efficient technology services, tailored to meet the evolving needs of businesses and individuals.
+            </p>
+          </div>
+        </div>
 
-        {/* Core Values - Holographic Cards */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
-            Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Principles</span>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`${value.bg} rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl hover:shadow-[0_0_30px_-5px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2`}
-              >
-                <div className="p-8">
-                  <div className="mb-6 text-white">{value.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-200">{value.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+        <h2 className="text-3xl font-bold text-black mb-8">Our Core Values</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white p-6 rounded-lg shadow-md"
+            >
+              <div className="mb-4">{value.icon}</div>
+              <h3 className="text-xl font-bold text-black mb-2">{value.title}</h3>
+              <p className="text-gray-700">{value.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
 
-        {/* Differentiators - Cyber Terminal UI */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="bg-gray-900/70 border border-gray-700 rounded-2xl overflow-hidden shadow-xl"
-        >
-          <div className="px-6 py-4 border-b border-gray-700 flex gap-2 bg-gradient-to-r from-gray-800 to-gray-900">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <div className="ml-auto text-sm text-gray-400 font-mono">differential_analysis.exe</div>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="bg-white/80 backdrop-blur-md rounded-lg shadow-lg p-8"
+      >
+        <h2 className="text-3xl font-bold text-black mb-8">What Sets Us Apart</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-2xl font-bold text-black mb-4">Custom  Courses</h3>
+            <p className="text-gray-700 mb-6">
+              We tailor every project to meet specific client needs, ensuring precision and relevance.
+            </p>
+            
+            <h3 className="text-2xl font-bold text-black mb-4">Scalable and Future-Ready</h3>
+            <p className="text-gray-700">
+              Our  Courses are designed to grow with our clients, adapting to technological advancements and business expansion.
+            </p>
           </div>
-          <div className="p-8 sm:p-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">[root@dbughouse]</span> # differentials
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex gap-6 group">
-                  <div className="flex-shrink-0 mt-1 text-emerald-400 group-hover:text-white transition-colors duration-300">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3">
-                      <span className="text-emerald-400">$</span> {feature.title}
-                    </h3>
-                    <p className="text-gray-400 font-mono group-hover:text-gray-300 transition-colors duration-300">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12 pt-8 border-t border-gray-700">
-              <p className="text-gray-400 font-mono">
-                <span className="text-emerald-400">[✓]</span> All systems operational. Security posture: <span className="text-green-400 font-bold">OPTIMAL</span> | <span className="text-cyan-400">Last scan: {new Date().toLocaleString()}</span>
-              </p>
-            </div>
+          
+          <div>
+            <h3 className="text-2xl font-bold text-black mb-4">Compliance and Security</h3>
+            <p className="text-gray-700 mb-6">
+              We adhere strictly to industry standards, ensuring legal and data security compliance in every project.
+            </p>
+            
+            <h3 className="text-2xl font-bold text-black mb-4">Proven Frameworks</h3>
+            <p className="text-gray-700">
+              Leveraging cutting-edge technologies and methodologies, we deliver projects on time and with measurable success.
+            </p>
           </div>
-        </motion.section>
-      </div>
+        </div>
+      </motion.section>
     </main>
   );
 }

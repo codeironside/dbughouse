@@ -16,7 +16,7 @@ const galleryImages = [
   },
   {
     url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800',
-    title: 'Digital Solutions'
+    title: 'Digital  Courses'
   },
   {
     url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
